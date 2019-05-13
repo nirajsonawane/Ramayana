@@ -22,7 +22,7 @@ public class SubMenuView extends  BaseView<Void>  {
         while (true){
             super.print(updateGameMenu);
             int subMenuselectedOption = super.readInt();
-            subMenuController.execute(game,updateGameMenu,subMenuselectedOption);
+            subMenuController.execute(subMenuselectedOption);
         }
     }
 }

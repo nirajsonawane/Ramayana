@@ -4,9 +4,18 @@ import com.ns.ramayana.domain.game.Game;
 import com.ns.ramayana.domain.game.UpdateGameMenu;
 import com.ns.ramayana.exception.GameException;
 
-public class SubMenuController {
+public class SubMenuController implements Controller<Integer,Game>{
 
-    public void execute(Game game, UpdateGameMenu updateGameMenu,int selectedOption){
+    private final Game game;
+    private final UpdateGameMenu updateGameMenu;
+
+    public SubMenuController(Game game, UpdateGameMenu updateGameMenu) {
+        this.game=game;
+        this.updateGameMenu=updateGameMenu;
+    }
+
+    @Override
+    public Game execute(Integer selectedOption){
         updateGameMenu
                 .getMenuOptions()
                 .stream()
@@ -15,6 +24,7 @@ public class SubMenuController {
                 .orElseThrow(() -> new GameException("Invalid Option"))
                 .getConsumer()
                 .accept(game);
+        return game;
 
     }
 }

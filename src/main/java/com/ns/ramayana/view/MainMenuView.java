@@ -19,6 +19,6 @@ public class MainMenuView extends BaseView<Game> {
             super.print(menu);
             super.printText("Please Select Option");
         int option = super.readInt();
-        return mainMenuController.execute(option,menu);
+        return mainMenuController.execute(option);
     }
 }

@@ -1,4 +1,4 @@
-package com.ns.ramayana;
+package com.ns.ramayana.step;
 
 import com.ns.ramayana.view.WelcomeView;
 

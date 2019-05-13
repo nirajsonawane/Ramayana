@@ -3,7 +3,6 @@ package com.ns.ramayana.domain.battle;
 import lombok.Getter;
 
 @Getter
-
 public enum BattlesEnum {
 
     BATTLE_WITH_RVANA("BATTLE WITH RAVANA",150,1,6),

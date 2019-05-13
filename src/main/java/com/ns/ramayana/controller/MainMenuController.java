@@ -7,9 +7,16 @@ import com.ns.ramayana.exception.GameException;
 import com.ns.ramayana.view.BaseView;
 import com.ns.ramayana.view.MainMenuView;
 
-public class MainMenuController  {
+public class MainMenuController  implements Controller<Integer,Game>  {
 
-    public Game execute(int option,CreateGameMenu menu){
+    private final CreateGameMenu menu;
+
+    public MainMenuController(CreateGameMenu menu){
+        this.menu=menu;
+    }
+
+    @Override
+    public Game execute(Integer option){
         Game game = (Game) menu
                 .getMenuOptions()
                 .stream()

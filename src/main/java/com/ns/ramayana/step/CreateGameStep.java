@@ -1,4 +1,4 @@
-package com.ns.ramayana;
+package com.ns.ramayana.step;
 
 import com.ns.ramayana.command.CreateGameCommand;
 import com.ns.ramayana.command.CreateNewGameCommand;
@@ -27,7 +27,7 @@ public class CreateGameStep implements Function<Player ,Game>{
         CreateGameCommand newGame = new CreateNewGameCommand(player,consoleService);
         LoadGameCommand loadGame = new LoadGameCommand(persistentService,consoleService);
         CreateGameMenu mainMenu = new CreateGameMenu(newGame,loadGame);
-        MainMenuController mainMenuController= new MainMenuController();
+        MainMenuController mainMenuController= new MainMenuController(mainMenu);
         MainMenuView mainMenuView = new MainMenuView(mainMenu,mainMenuController);
         return mainMenuView.show();
     }

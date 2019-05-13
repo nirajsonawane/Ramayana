@@ -1,4 +1,4 @@
-package com.ns.ramayana;
+package com.ns.ramayana.step;
 
 import com.ns.ramayana.command.*;
 import com.ns.ramayana.controller.SubMenuController;
@@ -31,7 +31,7 @@ public class PlayGameStep implements Function<Game,Void> {
         ProfileCommand profileCommand = new ProfileCommand(consoleService);
         UpdateGameMenu updateGameMenu = new UpdateGameMenu(startBattleCommand,selectBattle,exit,help, profileCommand, saveCommand);
 
-        SubMenuController subMenuController =new SubMenuController();
+        SubMenuController subMenuController =new SubMenuController(game,updateGameMenu);
         SubMenuView subMenuView=new SubMenuView(game,subMenuController,updateGameMenu);
         subMenuView.show();
         return null;
