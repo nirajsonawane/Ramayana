@@ -17,7 +17,7 @@ public class CreateUserView {
     public  Player show() {
         baseView.printText("Please Enter User Name ");
         String name = baseView.readString();
-        Player execute = createPlayerController.execute(name);
-        return  execute;
+        return createPlayerController.execute(name);
+
     }
 }

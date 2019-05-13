@@ -3,7 +3,7 @@ package com.ns.ramayana.command;
 import com.ns.ramayana.BaseTest;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HelpCommandTest extends BaseTest{
 

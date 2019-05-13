@@ -1,12 +1,11 @@
 package com.ns.ramayana.step;
 
 import com.ns.ramayana.BaseTest;
-import com.ns.ramayana.domain.game.Player;
 import com.ns.ramayana.view.BaseView;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class WelcomeStepTest extends BaseTest{
     private BaseView baseView;

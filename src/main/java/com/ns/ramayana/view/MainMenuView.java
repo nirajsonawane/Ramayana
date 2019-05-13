@@ -4,8 +4,6 @@ import com.ns.ramayana.controller.MainMenuController;
 import com.ns.ramayana.domain.game.CreateGameMenu;
 import com.ns.ramayana.domain.game.Game;
 
-import java.util.Optional;
-
 public class MainMenuView {
 
     private final CreateGameMenu menu;

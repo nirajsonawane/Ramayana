@@ -14,7 +14,7 @@ public class MainMenuController  implements Controller<Integer,Game>  {
 
     @Override
     public Game execute(Integer option){
-        Game game = (Game) menu
+        return  menu
                 .getMenuOptions()
                 .stream()
                 .filter(it -> it.getMenuItem().getShotCut() == option)
@@ -22,7 +22,7 @@ public class MainMenuController  implements Controller<Integer,Game>  {
                 .orElseThrow(() -> new GameException("Invalid Option"))
                 .getSupplier()
                 .get();
-        return game;
+
     }
 
 }

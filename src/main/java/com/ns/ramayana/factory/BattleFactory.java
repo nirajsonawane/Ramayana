@@ -3,13 +3,14 @@ package com.ns.ramayana.factory;
 import com.ns.ramayana.domain.battle.Battle;
 import com.ns.ramayana.domain.battle.BattlesEnum;
 import com.ns.ramayana.domain.characters.CharacterEnum;
+import com.ns.ramayana.exception.GameException;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-;
+
 
 public class BattleFactory {
     private  BattleFactory(){
@@ -66,7 +67,8 @@ public class BattleFactory {
                 .stream()
                 .filter(battlePredicate)
                 .findFirst()
-                .get();
+                .orElseThrow(()->new GameException("Invalid BattleId"));
+
     }
 
 

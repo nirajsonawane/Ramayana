@@ -3,7 +3,6 @@ package com.ns.ramayana.command;
 import com.ns.ramayana.BaseTest;
 import com.ns.ramayana.domain.game.Game;
 import com.ns.ramayana.domain.game.Player;
-import com.ns.ramayana.service.PersistentService;
 import com.ns.ramayana.view.BaseView;
 import org.junit.jupiter.api.Test;
 

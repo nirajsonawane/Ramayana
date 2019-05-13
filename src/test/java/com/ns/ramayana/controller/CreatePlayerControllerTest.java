@@ -4,7 +4,7 @@ import com.ns.ramayana.BaseTest;
 import com.ns.ramayana.domain.game.Player;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CreatePlayerControllerTest extends BaseTest{
 
