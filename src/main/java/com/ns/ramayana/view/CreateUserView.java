@@ -3,6 +3,9 @@ package com.ns.ramayana.view;
 import com.ns.ramayana.controller.CreatePlayerController;
 import com.ns.ramayana.domain.game.Player;
 
+/**
+ * Responsible For  Displaying View for Creating User
+ */
 public class CreateUserView {
 
     private final CreatePlayerController createPlayerController;

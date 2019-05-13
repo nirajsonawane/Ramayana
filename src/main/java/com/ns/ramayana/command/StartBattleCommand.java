@@ -2,6 +2,9 @@ package com.ns.ramayana.command;
 
 import com.ns.ramayana.domain.game.Game;
 
+/**
+ * Responsible for Accepting Start Battle Command & Updating User Experience based on outcome.
+ */
 public class StartBattleCommand implements UpdateGameCommand {
 
     @Override

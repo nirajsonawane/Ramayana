@@ -7,6 +7,9 @@ import com.ns.ramayana.view.BaseView;
 
 import java.util.List;
 
+/**
+ * Responsible For Creating Game From File.
+ */
 public class LoadGameCommand implements CreateGameCommand {
 
     private final PersistentService persistentService;

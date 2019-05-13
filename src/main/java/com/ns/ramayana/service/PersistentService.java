@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Responsible For Reading and Saving Game Information
+ */
 public class PersistentService {
 
     private String gameData;

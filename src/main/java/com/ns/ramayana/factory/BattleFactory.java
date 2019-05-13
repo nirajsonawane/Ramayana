@@ -11,7 +11,9 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 
-
+/**
+ * Responsible For Creating Battles
+ */
 public class BattleFactory {
     private  BattleFactory(){
 

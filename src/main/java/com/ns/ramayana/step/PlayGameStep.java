@@ -10,6 +10,9 @@ import com.ns.ramayana.view.SubMenuView;
 
 import java.util.function.Function;
 
+/**
+ * Responsible For Connecting All components Of Playing Game Phase
+ */
 public class PlayGameStep implements Function<Game,Game> {
 
     private final BaseView baseView;

@@ -5,6 +5,9 @@ import com.ns.ramayana.domain.battle.Weapon;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Responsible For Creating Weapons characters
+ */
 public class WeaponFactory {
     private  WeaponFactory(){
 

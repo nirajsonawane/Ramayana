@@ -3,6 +3,9 @@ package com.ns.ramayana.command;
 import com.ns.ramayana.domain.game.Game;
 import com.ns.ramayana.view.BaseView;
 
+/**
+ * Responsible For Accepting Exit Command and updating the game status
+ */
 public class ExitGameCommand implements UpdateGameCommand {
 
     private final BaseView baseView;

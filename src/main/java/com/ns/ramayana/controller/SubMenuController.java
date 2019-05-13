@@ -4,6 +4,12 @@ import com.ns.ramayana.domain.game.Game;
 import com.ns.ramayana.domain.game.UpdateGameMenu;
 import com.ns.ramayana.exception.GameException;
 
+/**
+ * /**
+ * Responsible For Calling appropriate command based on selected option on Sub Menu.
+ *
+ */
+
 public class SubMenuController implements Controller<Integer,Game>{
 
     private final Game game;

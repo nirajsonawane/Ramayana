@@ -13,6 +13,9 @@ import com.ns.ramayana.view.MainMenuView;
 
 import java.util.function.Function;
 
+/**
+ * Responsible For Connecting All components Of Creating Game Phase
+ */
 public class CreateGameStep implements Function<Player ,Game>{
 
     private BaseView baseView;

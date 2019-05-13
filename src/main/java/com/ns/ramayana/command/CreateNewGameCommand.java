@@ -5,7 +5,7 @@ import com.ns.ramayana.domain.game.Player;
 import com.ns.ramayana.util.RamayanaUtil;
 
 /**
- *
+ *  Responsible for accepting Create Player Command and creating Player
  */
 public class CreateNewGameCommand implements CreateGameCommand {
 

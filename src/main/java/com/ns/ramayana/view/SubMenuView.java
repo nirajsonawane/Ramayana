@@ -4,6 +4,9 @@ import com.ns.ramayana.controller.SubMenuController;
 import com.ns.ramayana.domain.game.Game;
 import com.ns.ramayana.domain.game.UpdateGameMenu;
 
+/**
+ * Responsible For  Displaying View for Sub Menu User
+ */
 public class SubMenuView {
 
     private final Game game;

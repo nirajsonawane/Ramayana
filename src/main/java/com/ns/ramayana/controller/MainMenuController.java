@@ -4,6 +4,10 @@ import com.ns.ramayana.domain.game.CreateGameMenu;
 import com.ns.ramayana.domain.game.Game;
 import com.ns.ramayana.exception.GameException;
 
+/**
+ * Responsible For Calling appropriate command based on selected option on Main Menu.
+ * Main Menu Includes Creating New Game or Loading Game from File
+ */
 public class MainMenuController  implements Controller<Integer,Game>  {
 
     private final CreateGameMenu menu;

@@ -4,6 +4,9 @@ import com.ns.ramayana.domain.game.Game;
 import com.ns.ramayana.service.PersistentService;
 import com.ns.ramayana.view.BaseView;
 
+/**
+ * Responsible For Saving Game.
+ */
 public class SaveCommand implements UpdateGameCommand {
 
     private final BaseView baseView;
