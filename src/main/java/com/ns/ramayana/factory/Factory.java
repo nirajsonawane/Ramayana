@@ -19,6 +19,7 @@ public class Factory {
     private PersistentService persistentService;
     private  PlayGameStep playGameStep;
     private WelcomeStep welcomeStep;
+    private final String fileName="gameDataFile.txt";
     public WelcomeStep getWelcomeStep(){
         return Optional.ofNullable(welcomeStep).orElse(createWelcomeStep());
     }
@@ -46,7 +47,7 @@ public class Factory {
     }
 
     private PlayGameStep createPlayGameStep() {
-        this.playGameStep=new PlayGameStep(baseView, persistentService);
+        this.playGameStep=new PlayGameStep(getBaseView(), getPersistentService(fileName));
         return this.playGameStep;
     }
 
@@ -66,13 +67,13 @@ public class Factory {
     }
 
     private CreateGameStep createGameStep() {
-        this.createGameStep=new CreateGameStep(baseView, persistentService);
+        this.createGameStep=new CreateGameStep(getBaseView(), getPersistentService(fileName));
         return this.createGameStep;
     }
 
     private CreatePlayerStep createPlayerStep() {
         CreatePlayerController createPlayerController = new CreatePlayerController();
-        CreateUserView createUserView = new CreateUserView(createPlayerController,baseView);
+        CreateUserView createUserView = new CreateUserView(createPlayerController,getBaseView());
         this.createPlayerStep=new CreatePlayerStep(createUserView);
         return this.createPlayerStep;
     }

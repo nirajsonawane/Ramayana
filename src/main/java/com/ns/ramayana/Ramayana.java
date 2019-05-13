@@ -12,13 +12,11 @@ public class Ramayana {
 
     public static void main(String[] args) {
 
-        Factory factory= new Factory();
-        //BaseView baseView = factory.getBaseView();
-        //PersistentService persistentService = factory.getPersistentService("gameDataFile.txt");
+        Factory factory = new Factory();
         WelcomeStep welcomeStep = factory.getWelcomeStep();
         CreatePlayerStep createPlayerStep = factory.getCreatePlayerStep();
-        CreateGameStep createGameStep =factory.getCreateGameStep();
-        PlayGameStep playGameStep =factory.getPlayGameStep();
+        CreateGameStep createGameStep = factory.getCreateGameStep();
+        PlayGameStep playGameStep = factory.getPlayGameStep();
 
         welcomeStep
                 .andThen(createPlayerStep)
