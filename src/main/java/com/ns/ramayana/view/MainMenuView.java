@@ -16,9 +16,11 @@ public class MainMenuView extends BaseView<Game> {
 
     @Override
     public Game show() {
-            super.print(menu);
-            super.printText("Please Select Option");
+        super.print(menu);
+        super.printText("Please Select ID Of Option!");
         int option = super.readInt();
-        return mainMenuController.execute(option);
+        Game game = mainMenuController.execute(option);
+        super.printText("Active Game ID " + game.getGameId());
+        return game;
     }
 }

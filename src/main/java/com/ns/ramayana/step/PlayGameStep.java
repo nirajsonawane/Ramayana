@@ -11,7 +11,7 @@ import com.ns.ramayana.view.SubMenuView;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-public class PlayGameStep implements Function<Game,Void> {
+public class PlayGameStep implements Function<Game,Game> {
 
     private final ConsoleService consoleService;
     private final PersistentService persistentService;
@@ -22,7 +22,7 @@ public class PlayGameStep implements Function<Game,Void> {
     }
 
     @Override
-    public Void apply(Game game) {
+    public Game apply(Game game) {
         StartBattleCommand startBattleCommand =new StartBattleCommand();
         SelectBattle selectBattle = new SelectBattle(consoleService);
         HelpCommand help = new HelpCommand(consoleService);
@@ -34,6 +34,7 @@ public class PlayGameStep implements Function<Game,Void> {
         SubMenuController subMenuController =new SubMenuController(game,updateGameMenu);
         SubMenuView subMenuView=new SubMenuView(game,subMenuController,updateGameMenu);
         subMenuView.show();
-        return null;
+        return game;
+
     }
 }

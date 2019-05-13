@@ -21,8 +21,10 @@ public class SubMenuView extends  BaseView<Void>  {
     public Void show() {
         while (true){
             super.print(updateGameMenu);
+            super.printText("Please Select ID Of Option!");
             int subMenuselectedOption = super.readInt();
             subMenuController.execute(subMenuselectedOption);
+
         }
     }
 }

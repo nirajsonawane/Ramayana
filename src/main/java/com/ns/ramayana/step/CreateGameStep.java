@@ -18,13 +18,15 @@ public class CreateGameStep implements Function<Player ,Game>{
     private final ConsoleService consoleService;
     private final PersistentService persistentService;
 
+
     public CreateGameStep(ConsoleService consoleService, PersistentService persistentService){
         this.consoleService=consoleService;
         this.persistentService=persistentService;
+
     }
     @Override
     public Game apply(Player player) {
-        CreateGameCommand newGame = new CreateNewGameCommand(player,consoleService);
+        CreateGameCommand newGame = new CreateNewGameCommand(player);
         LoadGameCommand loadGame = new LoadGameCommand(persistentService,consoleService);
         CreateGameMenu mainMenu = new CreateGameMenu(newGame,loadGame);
         MainMenuController mainMenuController= new MainMenuController(mainMenu);

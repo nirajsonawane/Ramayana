@@ -22,7 +22,7 @@ public class LoadGameCommand implements CreateGameCommand {
 
         List<PlayerGameId> allPlayerGameId = persistentService.getAllPlayerGameId();
         consoleService.printPlayerGameId(allPlayerGameId);
-        consoleService.printText("Enter Game ID To Load");
+        consoleService.printText("Select Game ID To Load");
         Long gameId = consoleService.readLong();
         System.out.println("Loading Game for id " + gameId);
         Game gameById = persistentService.getGameById(gameId);

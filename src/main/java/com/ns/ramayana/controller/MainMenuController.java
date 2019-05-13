@@ -2,10 +2,7 @@ package com.ns.ramayana.controller;
 
 import com.ns.ramayana.domain.game.CreateGameMenu;
 import com.ns.ramayana.domain.game.Game;
-import com.ns.ramayana.domain.game.Player;
 import com.ns.ramayana.exception.GameException;
-import com.ns.ramayana.view.BaseView;
-import com.ns.ramayana.view.MainMenuView;
 
 public class MainMenuController  implements Controller<Integer,Game>  {
 

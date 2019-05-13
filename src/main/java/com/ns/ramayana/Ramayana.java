@@ -1,6 +1,7 @@
 package com.ns.ramayana;
 
 import com.ns.ramayana.controller.CreatePlayerController;
+import com.ns.ramayana.factory.Factory;
 import com.ns.ramayana.service.ConsoleService;
 import com.ns.ramayana.service.PersistentService;
 import com.ns.ramayana.step.CreateGameStep;
@@ -16,12 +17,13 @@ public class Ramayana {
 
     public static void main(String[] args) {
 
-        ConsoleService consoleService = new ConsoleService();
-        PersistentService persistentService = new PersistentService();
-        WelcomeStep welcomeStep = new WelcomeStep();
-        CreatePlayerStep createPlayerStep = new CreatePlayerStep();
-        CreateGameStep createGameStep = new CreateGameStep(consoleService, persistentService);
-        PlayGameStep playGameStep = new PlayGameStep(consoleService, persistentService);
+        Factory factory= new Factory();
+        ConsoleService consoleService = factory.getConsoleService();
+        PersistentService persistentService = factory.getPersistentService();
+        WelcomeStep welcomeStep = factory.getWelcomeStep();
+        CreatePlayerStep createPlayerStep = factory.getCreatePlayerStep();
+        CreateGameStep createGameStep =factory.getCreateGameStep();
+        PlayGameStep playGameStep =factory.getPlayGameStep();
 
         welcomeStep
                 .andThen(createPlayerStep)

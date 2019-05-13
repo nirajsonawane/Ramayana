@@ -4,9 +4,9 @@ import com.ns.ramayana.view.WelcomeView;
 
 import java.util.function.Function;
 
-public class WelcomeStep implements Function<Void,Void> {
+public class WelcomeStep implements Function<String,Void> {
     @Override
-    public Void apply(Void aVoid) {
+    public Void apply(String  string) {
         WelcomeView welcomeView= new WelcomeView();
         return welcomeView.show();
     }

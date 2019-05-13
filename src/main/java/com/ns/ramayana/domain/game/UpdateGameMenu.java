@@ -11,12 +11,13 @@ public class UpdateGameMenu {
     private List<UpdateGameMenuItem> menuOptions = new ArrayList<>();
 
     public UpdateGameMenu(StartBattleCommand startBattleCommand, SelectBattle selectBattle, ExitGameCommand exit, HelpCommand help, ProfileCommand profileCommand, SaveCommand saveCommand){
+
         addMenuOption(  new UpdateGameMenuItem(new MenuItem(1,"Start Battle"), startBattleCommand));
         addMenuOption( new UpdateGameMenuItem(new MenuItem(2,"Select Battle"),selectBattle));
         addMenuOption( new UpdateGameMenuItem(new MenuItem(3,"ProfileCommand"), profileCommand));
         addMenuOption( new UpdateGameMenuItem(new MenuItem(4,"SaveCommand"), saveCommand));
-        addMenuOption( new UpdateGameMenuItem(new MenuItem(4,"HelpCommand"),help));
-        addMenuOption( new UpdateGameMenuItem(new MenuItem(5,"Exit"),exit));
+        addMenuOption( new UpdateGameMenuItem(new MenuItem(5,"HelpCommand"),help));
+        addMenuOption( new UpdateGameMenuItem(new MenuItem(6,"Exit"),exit));
 
 
     }

@@ -7,9 +7,14 @@ import lombok.ToString;
 
 @AllArgsConstructor
 @Getter
-@ToString
+
 public class CreateGameMenuItem {
     private MenuItem menuItem;
     @ToString.Exclude
     private CreateGameCommand supplier;
+
+    @Override
+    public String toString() {
+        return  menuItem.toString();
+    }
 }

@@ -7,9 +7,13 @@ import lombok.ToString;
 
 @AllArgsConstructor
 @Getter
-@ToString
+
 public class UpdateGameMenuItem {
     private MenuItem menuItem;
-    @ToString.Exclude
     private UpdateGameCommand consumer;
+
+    @Override
+    public String toString() {
+        return menuItem.toString();
+    }
 }

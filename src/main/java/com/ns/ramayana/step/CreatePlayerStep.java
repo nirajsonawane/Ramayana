@@ -6,12 +6,16 @@ import com.ns.ramayana.view.CreateUserView;
 
 import java.util.function.Function;
 
-public class CreatePlayerStep implements Function<Void,Player>{
+public class CreatePlayerStep implements Function<Void, Player> {
+
+    private final CreateUserView createUserView;
+
+    public CreatePlayerStep(CreateUserView createUserView) {
+        this.createUserView = createUserView;
+    }
 
     @Override
     public Player apply(Void aVoid) {
-        CreatePlayerController createPlayerController= new CreatePlayerController();
-        CreateUserView createUserView=new CreateUserView(createPlayerController);
-        return  createUserView.show();
+        return createUserView.show();
     }
 }
