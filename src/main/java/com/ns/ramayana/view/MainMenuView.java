@@ -4,6 +4,8 @@ import com.ns.ramayana.controller.MainMenuController;
 import com.ns.ramayana.domain.game.CreateGameMenu;
 import com.ns.ramayana.domain.game.Game;
 
+import java.util.Optional;
+
 public class MainMenuView {
 
     private final CreateGameMenu menu;
@@ -18,11 +20,15 @@ public class MainMenuView {
 
 
     public Game show() {
-        baseView.print(menu);
-        baseView.printText("Please Select ID Of Option!");
-        int option = baseView.readInt();
-        Game game = mainMenuController.execute(option);
+        Game game;
+        do{
+            baseView.print(menu);
+            baseView.printText("Please Select ID Of Option!");
+            int option = baseView.readInt();
+            game= mainMenuController.execute(option);
+        }while (null==game);
         baseView.printText("Active Game ID " + game.getGameId());
         return game;
+
     }
 }

@@ -72,7 +72,7 @@ public class Factory {
 
     private CreatePlayerStep createPlayerStep() {
         CreatePlayerController createPlayerController = new CreatePlayerController();
-        CreateUserView createUserView = new CreateUserView(createPlayerController);
+        CreateUserView createUserView = new CreateUserView(createPlayerController,baseView);
         this.createPlayerStep=new CreatePlayerStep(createUserView);
         return this.createPlayerStep;
     }

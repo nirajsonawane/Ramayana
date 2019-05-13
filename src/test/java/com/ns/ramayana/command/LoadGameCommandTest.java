@@ -42,8 +42,8 @@ class LoadGameCommandTest extends BaseTest {
     }
 
     private static Stream<Arguments> createTestInput() {
-        return Stream.of(Arguments.of(7407, "Niraj",4,80,"BATTLE WITH KUMBHAKARNA",2),
-                Arguments.of(6452, "Test",4,70,"BATTLE WITH KUMBHAKARNA",2));
+        return Stream.of(Arguments.of(6228, "Niraj",6,110,"BATTLE WITH KUMBHAKARNA",2),
+                Arguments.of(8516, "Test",5,60,"BATTLE WITH KUMBHAKARNA",2));
     }
 
     @Test

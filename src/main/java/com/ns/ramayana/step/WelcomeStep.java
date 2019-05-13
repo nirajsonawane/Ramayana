@@ -8,6 +8,7 @@ public class WelcomeStep implements Function<String,Void> {
     @Override
     public Void apply(String  string) {
         WelcomeView welcomeView= new WelcomeView();
+         welcomeView.show();
          return null;
 
     }

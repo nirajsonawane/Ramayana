@@ -6,14 +6,11 @@ import com.ns.ramayana.domain.game.Player;
 import com.ns.ramayana.exception.GameException;
 import com.ns.ramayana.service.PersistentService;
 import com.ns.ramayana.view.BaseView;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.io.ByteArrayInputStream;
-import java.security.PrivateKey;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -53,7 +50,7 @@ class CreateGameStepTest extends BaseTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"2\n7407"})
+    @ValueSource(strings = {"2\n6228"})
     public void shouldDisplayMainMenuAndPerfromSlectedAction_ShouldLoadOldGame(String input) {
 
 
@@ -72,7 +69,7 @@ class CreateGameStepTest extends BaseTest {
         assertTrue(s.contains(str2));
         assertTrue(s.contains(str3));
         assertTrue(s.contains(str4));
-        assertTrue(s.contains("Active Game ID 7407"));
+        assertTrue(s.contains("Active Game ID 6228"));
         assertNotNull(apply);
     }
 

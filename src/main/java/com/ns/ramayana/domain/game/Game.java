@@ -21,6 +21,8 @@ public class Game implements Serializable{
     private Battle battle;
     @Getter
     private Long gameId;
+    @Getter
+    private boolean gameActive;
 
 
 
@@ -28,6 +30,7 @@ public class Game implements Serializable{
     public Game(Player player,Long gameId) {
         this.player = player;
         this.gameId=gameId;
+        this.gameActive=true;
 
         setCurrentBattle(BattleFactory.getBattleWithKumbhakarna());
 
@@ -42,6 +45,9 @@ public class Game implements Serializable{
     public void resetCurrentBattle(){
         this.battle=BattleFactory.getBattleWithKumbhakarna();
 
+    }
+    public void stopGame(){
+        this.gameActive=false;
     }
 
 

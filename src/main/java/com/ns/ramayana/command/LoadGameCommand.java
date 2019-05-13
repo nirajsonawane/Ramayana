@@ -21,14 +21,20 @@ public class LoadGameCommand implements CreateGameCommand {
     public Game get() {
 
         List<PlayerGameId> allPlayerGameId = persistentService.getAllPlayerGameId();
-        baseView.printPlayerGameId(allPlayerGameId);
-        baseView.printText("Select Game ID To Load");
-        Long gameId = baseView.readLong();
-        System.out.println("Loading Game for id " + gameId);
-        Game gameById = persistentService.getGameById(gameId);
-        baseView.printText("Game Loaded Below are Game Details ");
-        baseView.printGame(gameById);
-        return gameById;
+        if(allPlayerGameId.isEmpty()){
+            baseView.printText("Games Not Available");
+            return null;
+        }else {
+            baseView.printPlayerGameId(allPlayerGameId);
+            baseView.printText("Select Game ID To Load");
+            Long gameId = baseView.readLong();
+            System.out.println("Loading Game for id " + gameId);
+            Game gameById = persistentService.getGameById(gameId);
+            baseView.printText("Game Loaded Below are Game Details ");
+            baseView.printGame(gameById);
+            return gameById;
+        }
+
 
 
     }

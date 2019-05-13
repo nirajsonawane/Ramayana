@@ -14,7 +14,7 @@ public class ExitGameCommand implements UpdateGameCommand {
     @Override
     public void accept(Game game) {
         baseView.printText("Thanks For Playing Game!");
-        System.exit(0);
+        game.stopGame();
 
     }
 }
