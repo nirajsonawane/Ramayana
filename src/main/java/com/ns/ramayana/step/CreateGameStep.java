@@ -34,7 +34,5 @@ public class CreateGameStep implements Function<Player ,Game>{
         return mainMenuView.show();
     }
 
-    public void setBaseView(BaseView baseView){
-        this.baseView=baseView;
-    }
+
 }

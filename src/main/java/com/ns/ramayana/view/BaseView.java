@@ -2,6 +2,7 @@ package com.ns.ramayana.view;
 
 import com.ns.ramayana.domain.battle.Battle;
 import com.ns.ramayana.domain.game.*;
+import com.ns.ramayana.exception.GameException;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -36,27 +37,25 @@ public class BaseView {
         try {
             return in.readLine();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new GameException("Error While Reading Data, Not a Number", e);
         }
-        return null;
     }
 
     public Integer readInt() {
         try {
             return Integer.parseInt(in.readLine());
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new GameException("Invalid Input , Not a Number ", e);
         }
-        return null;
     }
 
     public Long readLong() {
         try {
             return Long.parseLong(in.readLine());
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new GameException("Invalid Input , Not a Number ", e);
         }
-        return null;
+
     }
 
 

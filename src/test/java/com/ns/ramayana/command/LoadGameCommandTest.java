@@ -21,7 +21,6 @@ class LoadGameCommandTest extends BaseTest {
 
     @ParameterizedTest
     @MethodSource("createTestInput")
-    //@ValueSource(longs = 7407l)
     public void shouldLoadGameFromFileWithAllDetails(long gameId,String playerName,int playerLevel,int reputation,String battleDescription,int battleId) {
 
         BaseView baseView = super.factory.getBaseView();
@@ -38,7 +37,6 @@ class LoadGameCommandTest extends BaseTest {
         assertEquals(game.getPlayer().getPlayerExperience().getLevel(),playerLevel);
         assertEquals(game.getPlayer().getPlayerExperience().getReputation(),reputation);
         assertEquals(game.getCurrentBattle().getBattleId(),battleId);
-       // assertEquals(game.getCurrentBattle().getBattleDescription(),battleDescription);
     }
 
     private static Stream<Arguments> createTestInput() {
@@ -56,5 +54,6 @@ class LoadGameCommandTest extends BaseTest {
         assertEquals("Game Not Found", exception.getMessage());
 
     }
+
 
 }
