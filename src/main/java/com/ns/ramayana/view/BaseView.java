@@ -3,12 +3,16 @@ package com.ns.ramayana.view;
 import com.ns.ramayana.domain.battle.Battle;
 import com.ns.ramayana.domain.game.*;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.List;
-import java.util.Scanner;
 
 public class BaseView {
 
-    Scanner in = new Scanner(System.in);
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
 
     public void print(CreateGameMenu menu) {
         menu
@@ -29,15 +33,30 @@ public class BaseView {
     }
 
     public String readString() {
-        return in.nextLine();
+        try {
+            return in.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
-    public int readInt() {
-        return in.nextInt();
+    public Integer readInt() {
+        try {
+            return Integer.parseInt(in.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public Long readLong() {
-        return in.nextLong();
+        try {
+            return Long.parseLong(in.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 
@@ -72,6 +91,10 @@ public class BaseView {
     public void print(Player player) {
         System.out.println(player);
 
+    }
+
+    public void mockInput(ByteArrayInputStream mock) {
+        this.in = new BufferedReader(new InputStreamReader(mock));
     }
 
 

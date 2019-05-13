@@ -11,10 +11,14 @@ import java.util.stream.Collectors;
 
 public class PersistentService {
 
-    private String gameData = "gameDataFile.txt";
+    private String gameData;
+
+    public PersistentService(String fileName){
+        this.gameData=fileName;
+    }
 
     public void insertOrUpdateGame(Game game)  {
-        System.out.println("In SaveCommand Game!!");
+
         List<Game> list = readFilestoGame();
         if (list.contains(game)) {
             list.remove(game);
@@ -49,7 +53,7 @@ public class PersistentService {
 
     }
     public Game getGameById(Long id)  {
-        return readFilestoGame().stream().filter(it->it.getGameId().equals(id)).findFirst().orElseThrow(()->new RuntimeException("Game Not Found"));
+        return readFilestoGame().stream().filter(it->it.getGameId().equals(id)).findFirst().orElseThrow(()->new GameException("Game Not Found"));
 
     }
     public List<PlayerGameId>   getAllPlayerGameId()  {

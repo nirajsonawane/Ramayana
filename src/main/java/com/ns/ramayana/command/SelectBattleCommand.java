@@ -8,11 +8,11 @@ import com.ns.ramayana.view.BaseView;
 import java.util.List;
 
 
-public class SelectBattle implements UpdateGameCommand {
+public class SelectBattleCommand implements UpdateGameCommand {
 
     private final BaseView baseView;
 
-    public SelectBattle(BaseView baseView){
+    public SelectBattleCommand(BaseView baseView){
         this.baseView=baseView;
     }
 

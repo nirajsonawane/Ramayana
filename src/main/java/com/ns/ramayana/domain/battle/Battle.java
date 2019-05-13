@@ -4,7 +4,6 @@ package com.ns.ramayana.domain.battle;
 import com.ns.ramayana.domain.characters.Character;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.ToString;
 
 import java.io.Serializable;
 
@@ -19,6 +18,7 @@ public class Battle implements Serializable {
 
     @Getter
     private Integer minimumReputationNeededToPlay;
+
 
     private String battleDescription;
 

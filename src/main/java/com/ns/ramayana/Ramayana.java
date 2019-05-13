@@ -16,7 +16,7 @@ public class Ramayana {
 
         Factory factory= new Factory();
         BaseView baseView = factory.getBaseView();
-        PersistentService persistentService = factory.getPersistentService();
+        PersistentService persistentService = factory.getPersistentService("gameDataFile.txt");
         WelcomeStep welcomeStep = factory.getWelcomeStep();
         CreatePlayerStep createPlayerStep = factory.getCreatePlayerStep();
         CreateGameStep createGameStep =factory.getCreateGameStep();

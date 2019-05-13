@@ -15,7 +15,7 @@ import java.util.function.Function;
 
 public class CreateGameStep implements Function<Player ,Game>{
 
-    private final BaseView baseView;
+    private BaseView baseView;
     private final PersistentService persistentService;
 
 
@@ -30,7 +30,11 @@ public class CreateGameStep implements Function<Player ,Game>{
         LoadGameCommand loadGame = new LoadGameCommand(persistentService,baseView);
         CreateGameMenu mainMenu = new CreateGameMenu(newGame,loadGame);
         MainMenuController mainMenuController= new MainMenuController(mainMenu);
-        MainMenuView mainMenuView = new MainMenuView(mainMenu,mainMenuController);
+        MainMenuView mainMenuView = new MainMenuView(mainMenu,mainMenuController,baseView);
         return mainMenuView.show();
+    }
+
+    public void setBaseView(BaseView baseView){
+        this.baseView=baseView;
     }
 }

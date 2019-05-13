@@ -2,7 +2,6 @@ package com.ns.ramayana.domain.game;
 
 import com.ns.ramayana.domain.battle.Battle;
 import com.ns.ramayana.factory.BattleFactory;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -11,20 +10,21 @@ import java.io.Serializable;
 
 
 @ToString
-@Getter
 @EqualsAndHashCode
 public class Game implements Serializable{
 
     @EqualsAndHashCode.Exclude
+    @Getter
     private Player player;
+
     @EqualsAndHashCode.Exclude
     private Battle battle;
-
+    @Getter
     private Long gameId;
 
 
 
-    @Builder
+
     public Game(Player player,Long gameId) {
         this.player = player;
         this.gameId=gameId;

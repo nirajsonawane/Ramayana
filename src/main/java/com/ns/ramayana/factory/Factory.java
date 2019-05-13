@@ -38,8 +38,8 @@ public class Factory {
 
     }
 
-    public PersistentService getPersistentService(){
-        return Optional.ofNullable(persistentService).orElse(createPersistentService());
+    public PersistentService getPersistentService(String fileName){
+        return Optional.ofNullable(persistentService).orElse(createPersistentService(fileName));
     }
     public PlayGameStep getPlayGameStep(){
         return Optional.ofNullable(playGameStep).orElse(createPlayGameStep());
@@ -51,8 +51,8 @@ public class Factory {
     }
 
 
-    private PersistentService createPersistentService() {
-        this.persistentService=new PersistentService();
+    private PersistentService createPersistentService(String fileName) {
+        this.persistentService=new PersistentService(fileName);
         return this.persistentService;
     }
 

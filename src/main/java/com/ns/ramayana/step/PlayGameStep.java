@@ -23,15 +23,15 @@ public class PlayGameStep implements Function<Game,Game> {
     @Override
     public Game apply(Game game) {
         StartBattleCommand startBattleCommand =new StartBattleCommand();
-        SelectBattle selectBattle = new SelectBattle(baseView);
+        SelectBattleCommand selectBattleCommand = new SelectBattleCommand(baseView);
         HelpCommand help = new HelpCommand(baseView);
         ExitGameCommand exit = new ExitGameCommand(baseView);
         SaveCommand saveCommand = new SaveCommand(baseView,persistentService);
         ProfileCommand profileCommand = new ProfileCommand(baseView);
-        UpdateGameMenu updateGameMenu = new UpdateGameMenu(startBattleCommand,selectBattle,exit,help, profileCommand, saveCommand);
+        UpdateGameMenu updateGameMenu = new UpdateGameMenu(startBattleCommand, selectBattleCommand,exit,help, profileCommand, saveCommand);
 
         SubMenuController subMenuController =new SubMenuController(game,updateGameMenu);
-        SubMenuView subMenuView=new SubMenuView(game,subMenuController,updateGameMenu);
+        SubMenuView subMenuView=new SubMenuView(game,subMenuController,updateGameMenu,baseView);
         subMenuView.show();
         return game;
 
