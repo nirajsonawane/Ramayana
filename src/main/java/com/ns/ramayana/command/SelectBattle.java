@@ -1,19 +1,19 @@
 package com.ns.ramayana.command;
 
-import com.ns.ramayana.service.ConsoleService;
 import com.ns.ramayana.domain.battle.Battle;
 import com.ns.ramayana.domain.game.Game;
 import com.ns.ramayana.factory.BattleFactory;
+import com.ns.ramayana.view.BaseView;
 
 import java.util.List;
 
 
 public class SelectBattle implements UpdateGameCommand {
 
-    private final ConsoleService consoleService;
+    private final BaseView baseView;
 
-    public SelectBattle(ConsoleService consoleService){
-        this.consoleService=consoleService;
+    public SelectBattle(BaseView baseView){
+        this.baseView=baseView;
     }
 
     @Override
@@ -21,9 +21,9 @@ public class SelectBattle implements UpdateGameCommand {
 
         Integer experience = game.getPlayer().getPlayerExperience().getLevel();
         List<Battle> allBattles = BattleFactory.getAllBattles(experience);
-        consoleService.printBattles(allBattles);
-        consoleService.printText("Select Option ");
-        int option = consoleService.readInt();
+        baseView.printBattles(allBattles);
+        baseView.printText("Please Select Battle ID :");
+        int option = baseView.readInt();
         Battle battleById = BattleFactory.getBattleById(option);
         game.setCurrentBattle(battleById);
 

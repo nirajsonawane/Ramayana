@@ -1,18 +1,18 @@
 package com.ns.ramayana.command;
 
-import com.ns.ramayana.service.ConsoleService;
 import com.ns.ramayana.domain.game.Game;
+import com.ns.ramayana.view.BaseView;
 
 public class ProfileCommand implements UpdateGameCommand {
 
-    private final ConsoleService consoleService;
+    private final BaseView baseView;
 
-    public ProfileCommand(ConsoleService consoleService){
-        this.consoleService=consoleService;
+    public ProfileCommand(BaseView baseView){
+        this.baseView=baseView;
     }
 
     @Override
     public void accept(Game game) {
-        consoleService.print(game.getPlayer());
+        baseView.print(game.getPlayer());
     }
 }

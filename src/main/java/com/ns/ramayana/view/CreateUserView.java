@@ -3,7 +3,7 @@ package com.ns.ramayana.view;
 import com.ns.ramayana.controller.CreatePlayerController;
 import com.ns.ramayana.domain.game.Player;
 
-public class CreateUserView extends BaseView<Player>{
+public class CreateUserView extends BaseView{
 
     private final CreatePlayerController createPlayerController;
 
@@ -11,7 +11,7 @@ public class CreateUserView extends BaseView<Player>{
         this.createPlayerController=createPlayerController;
     }
 
-    @Override
+
     public  Player show() {
         super.printText("Please Enter User Name ");
         String name = super.readString();

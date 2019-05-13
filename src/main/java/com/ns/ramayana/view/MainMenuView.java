@@ -4,7 +4,7 @@ import com.ns.ramayana.controller.MainMenuController;
 import com.ns.ramayana.domain.game.CreateGameMenu;
 import com.ns.ramayana.domain.game.Game;
 
-public class MainMenuView extends BaseView<Game> {
+public class MainMenuView extends BaseView {
 
     private final CreateGameMenu menu;
     private final MainMenuController mainMenuController;
@@ -14,7 +14,7 @@ public class MainMenuView extends BaseView<Game> {
         this.mainMenuController=mainMenuController;
     }
 
-    @Override
+
     public Game show() {
         super.print(menu);
         super.printText("Please Select ID Of Option!");

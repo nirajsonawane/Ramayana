@@ -3,9 +3,8 @@ package com.ns.ramayana.view;
 import com.ns.ramayana.controller.SubMenuController;
 import com.ns.ramayana.domain.game.Game;
 import com.ns.ramayana.domain.game.UpdateGameMenu;
-import com.ns.ramayana.exception.GameException;
 
-public class SubMenuView extends  BaseView<Void>  {
+public class SubMenuView extends  BaseView {
 
     private final Game game;
     private final SubMenuController subMenuController;
@@ -17,8 +16,8 @@ public class SubMenuView extends  BaseView<Void>  {
         this.updateGameMenu=updateGameMenu;
     }
 
-    @Override
-    public Void show() {
+
+    public void show() {
         while (true){
             super.print(updateGameMenu);
             super.printText("Please Select ID Of Option!");

@@ -2,7 +2,6 @@ package com.ns.ramayana.domain.game;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.ToString;
 
 
 @Getter

@@ -2,21 +2,19 @@ package com.ns.ramayana.domain.battle;
 
 
 import com.ns.ramayana.domain.characters.Character;
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
+
 import java.io.Serializable;
 
-@ToString
+
 @EqualsAndHashCode
 public class Battle implements Serializable {
 
     @Getter
     private final Integer level;
-    @ToString.Exclude
     private Character playerTeam;
-    @ToString.Exclude
     private Character computerTeam;
 
     @Getter
@@ -41,5 +39,14 @@ public class Battle implements Serializable {
             computerTeam.defendAttack(playerTeam.attack());
         }
         return computerTeam.isAlive();
+    }
+
+    @Override
+    public String toString() {
+        return "Battle[" +
+                "level=" + level +
+                ", battleDescription='" + battleDescription + '\'' +
+                ", battleId=" + battleId +
+                ']';
     }
 }

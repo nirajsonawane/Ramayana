@@ -1,12 +1,12 @@
 package com.ns.ramayana.factory;
 
 import com.ns.ramayana.controller.CreatePlayerController;
-import com.ns.ramayana.service.ConsoleService;
 import com.ns.ramayana.service.PersistentService;
 import com.ns.ramayana.step.CreateGameStep;
 import com.ns.ramayana.step.CreatePlayerStep;
 import com.ns.ramayana.step.PlayGameStep;
 import com.ns.ramayana.step.WelcomeStep;
+import com.ns.ramayana.view.BaseView;
 import com.ns.ramayana.view.CreateUserView;
 
 import java.util.Optional;
@@ -15,7 +15,7 @@ public class Factory {
 
     private CreatePlayerStep createPlayerStep;
     private CreateGameStep createGameStep;
-    private ConsoleService consoleService;
+    private BaseView baseView;
     private PersistentService persistentService;
     private  PlayGameStep playGameStep;
     private WelcomeStep welcomeStep;
@@ -24,12 +24,20 @@ public class Factory {
     }
 
     private WelcomeStep createWelcomeStep() {
-        return new WelcomeStep();
+         this.welcomeStep=new WelcomeStep();
+         return this.welcomeStep;
     }
 
-    public ConsoleService getConsoleService(){
-        return Optional.ofNullable(consoleService).orElse(createConsoleService());
+    public BaseView getBaseView(){
+        return Optional.ofNullable(baseView).orElse(createBaseView());
     }
+
+    private BaseView createBaseView() {
+        this.baseView=new BaseView();
+        return  this.baseView;
+
+    }
+
     public PersistentService getPersistentService(){
         return Optional.ofNullable(persistentService).orElse(createPersistentService());
     }
@@ -38,13 +46,11 @@ public class Factory {
     }
 
     private PlayGameStep createPlayGameStep() {
-        this.playGameStep=new PlayGameStep(consoleService, persistentService);
+        this.playGameStep=new PlayGameStep(baseView, persistentService);
         return this.playGameStep;
     }
-    private ConsoleService createConsoleService() {
-        this.consoleService=new ConsoleService();
-        return this.consoleService;
-    }
+
+
     private PersistentService createPersistentService() {
         this.persistentService=new PersistentService();
         return this.persistentService;
@@ -60,7 +66,7 @@ public class Factory {
     }
 
     private CreateGameStep createGameStep() {
-        this.createGameStep=new CreateGameStep(consoleService, persistentService);
+        this.createGameStep=new CreateGameStep(baseView, persistentService);
         return this.createGameStep;
     }
 

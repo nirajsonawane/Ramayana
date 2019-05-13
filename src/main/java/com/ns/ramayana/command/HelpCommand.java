@@ -1,19 +1,19 @@
 package com.ns.ramayana.command;
 
-import com.ns.ramayana.service.ConsoleService;
 import com.ns.ramayana.domain.game.Game;
+import com.ns.ramayana.view.BaseView;
 
 public class HelpCommand implements UpdateGameCommand {
 
-    private final ConsoleService consoleService;
+    private final BaseView baseView;
 
-    public HelpCommand(ConsoleService consoleService){
-        this.consoleService=consoleService;
+    public HelpCommand(BaseView baseView){
+        this.baseView=baseView;
     }
 
     @Override
     public void accept(Game game) {
-        consoleService.printHelp();
+        baseView.printHelp();
 
     }
 }

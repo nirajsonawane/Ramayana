@@ -2,32 +2,32 @@ package com.ns.ramayana.command;
 
 import com.ns.ramayana.domain.game.Game;
 import com.ns.ramayana.domain.game.PlayerGameId;
-import com.ns.ramayana.service.ConsoleService;
 import com.ns.ramayana.service.PersistentService;
+import com.ns.ramayana.view.BaseView;
 
 import java.util.List;
 
 public class LoadGameCommand implements CreateGameCommand {
 
     private final PersistentService persistentService;
-    private final ConsoleService consoleService;
+    private final BaseView baseView;
 
-    public LoadGameCommand(PersistentService persistentService, ConsoleService consoleService) {
+    public LoadGameCommand(PersistentService persistentService, BaseView baseView) {
         this.persistentService = persistentService;
-        this.consoleService = consoleService;
+        this.baseView = baseView;
     }
 
     @Override
     public Game get() {
 
         List<PlayerGameId> allPlayerGameId = persistentService.getAllPlayerGameId();
-        consoleService.printPlayerGameId(allPlayerGameId);
-        consoleService.printText("Select Game ID To Load");
-        Long gameId = consoleService.readLong();
+        baseView.printPlayerGameId(allPlayerGameId);
+        baseView.printText("Select Game ID To Load");
+        Long gameId = baseView.readLong();
         System.out.println("Loading Game for id " + gameId);
         Game gameById = persistentService.getGameById(gameId);
-        consoleService.printText("Game Loaded Below are Game Details ");
-        consoleService.printGame(gameById);
+        baseView.printText("Game Loaded Below are Game Details ");
+        baseView.printGame(gameById);
         return gameById;
 
 

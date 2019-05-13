@@ -2,7 +2,6 @@ package com.ns.ramayana.command;
 
 import com.ns.ramayana.domain.game.Game;
 import com.ns.ramayana.domain.game.Player;
-import com.ns.ramayana.service.ConsoleService;
 
 import java.util.Random;
 

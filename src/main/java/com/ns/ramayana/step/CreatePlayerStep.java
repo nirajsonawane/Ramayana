@@ -1,6 +1,5 @@
 package com.ns.ramayana.step;
 
-import com.ns.ramayana.controller.CreatePlayerController;
 import com.ns.ramayana.domain.game.Player;
 import com.ns.ramayana.view.CreateUserView;
 
