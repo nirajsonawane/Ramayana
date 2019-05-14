@@ -1,10 +1,7 @@
 package com.ns.ramayana;
 
 import com.ns.ramayana.factory.Factory;
-import com.ns.ramayana.step.CreateGameStep;
-import com.ns.ramayana.step.CreatePlayerStep;
-import com.ns.ramayana.step.PlayGameStep;
-import com.ns.ramayana.step.WelcomeStep;
+import com.ns.ramayana.step.*;
 import lombok.extern.java.Log;
 
 @Log
@@ -14,15 +11,15 @@ public class Ramayana {
 
         Factory factory = new Factory();
         WelcomeStep welcomeStep = factory.getWelcomeStep();
-        CreatePlayerStep createPlayerStep = factory.getCreatePlayerStep();
-        CreateGameStep createGameStep = factory.getCreateGameStep();
-        PlayGameStep playGameStep = factory.getPlayGameStep();
-
+        Void doNothing =null;
         welcomeStep
-                .andThen(createPlayerStep)
-                .andThen(createGameStep)
-                .andThen(playGameStep)
-                .apply(null);
+                .andThen(factory.getHowToPlayStep())
+                .andThen(factory.getCreatePlayerStep())
+                .andThen(factory.getCreateGameStep())
+                .andThen(factory.getPlayGameStep())
+                .andThen(factory.getSummaryStep())
+                .andThen(factory.getFeedBackStep())
+                .apply(doNothing);
 
 
     }

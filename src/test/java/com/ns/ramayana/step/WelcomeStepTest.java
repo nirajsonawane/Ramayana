@@ -18,7 +18,7 @@ class WelcomeStepTest extends BaseTest{
     @Test
     public void shouldPrintWelcomeMessage(){
         WelcomeStep welcomeStep= new WelcomeStep();
-        welcomeStep.apply("");
+        welcomeStep.apply(null);
         String s = super.outContent.toString();
         assertEquals("Welcome To Command Line Ramayana!!",s.trim());
 

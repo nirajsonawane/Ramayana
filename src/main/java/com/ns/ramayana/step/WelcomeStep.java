@@ -7,9 +7,9 @@ import java.util.function.Function;
 /**
  * Responsible For Connecting All components Of Welcome Message
  */
-public class WelcomeStep implements Function<String,Void> {
+public class WelcomeStep implements Function<Void,Void> {
     @Override
-    public Void apply(String  string) {
+    public Void apply(Void  v) {
         WelcomeView welcomeView= new WelcomeView();
          welcomeView.show();
          return null;

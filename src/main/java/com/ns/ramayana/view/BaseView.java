@@ -64,10 +64,6 @@ public class BaseView {
 
     }
 
-    public Player readPlayer() {
-        printText("Please Enter Your Name :");
-        return new Player(readString());
-    }
 
     public void printGame(Game game) {
         System.out.println(game);

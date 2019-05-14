@@ -2,10 +2,7 @@ package com.ns.ramayana.factory;
 
 import com.ns.ramayana.controller.CreatePlayerController;
 import com.ns.ramayana.service.PersistentService;
-import com.ns.ramayana.step.CreateGameStep;
-import com.ns.ramayana.step.CreatePlayerStep;
-import com.ns.ramayana.step.PlayGameStep;
-import com.ns.ramayana.step.WelcomeStep;
+import com.ns.ramayana.step.*;
 import com.ns.ramayana.view.BaseView;
 import com.ns.ramayana.view.CreateUserView;
 
@@ -19,7 +16,39 @@ public class Factory {
     private PersistentService persistentService;
     private  PlayGameStep playGameStep;
     private WelcomeStep welcomeStep;
+    private HowToPlayStep howToPlayStep;
+    private SummaryStep summaryStep;
+    private FeedBackStep feedBackStep;
     private final String fileName="gameDataFile.txt";
+
+    public FeedBackStep getFeedBackStep(){
+        return Optional.ofNullable(feedBackStep).orElse(createFeedBackStep());
+    }
+
+    private FeedBackStep createFeedBackStep() {
+        this.feedBackStep=new FeedBackStep(getBaseView());
+        return feedBackStep;
+    }
+
+    public SummaryStep getSummaryStep(){
+        return Optional.ofNullable(summaryStep).orElse(CreateSummaryStep());
+    }
+
+    private SummaryStep CreateSummaryStep() {
+        this.summaryStep=new SummaryStep(getBaseView());
+        return this.summaryStep;
+    }
+
+    public HowToPlayStep getHowToPlayStep(){
+        return Optional.ofNullable(howToPlayStep).orElse(createHowToPlayStep());
+    }
+
+    private HowToPlayStep createHowToPlayStep() {
+        this.howToPlayStep=new HowToPlayStep();
+        return this.howToPlayStep;
+
+    }
+
     public WelcomeStep getWelcomeStep(){
         return Optional.ofNullable(welcomeStep).orElse(createWelcomeStep());
     }
