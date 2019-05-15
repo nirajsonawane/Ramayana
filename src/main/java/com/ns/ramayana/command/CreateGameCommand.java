@@ -5,6 +5,7 @@ import com.ns.ramayana.domain.game.Game;
 /**
  * Supplier interface for Game
  */
+@FunctionalInterface
 public interface CreateGameCommand  {
       Game get();
 }

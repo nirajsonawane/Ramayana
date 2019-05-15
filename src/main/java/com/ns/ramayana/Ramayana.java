@@ -4,7 +4,9 @@ import com.ns.ramayana.factory.Factory;
 import com.ns.ramayana.step.*;
 import lombok.extern.java.Log;
 
-@Log
+/**
+ * Ramayana Class is Entry point for project. This class is Responsible For Creating Flow of a Game.
+ */
 public class Ramayana {
 
     public static void main(String[] args) {
