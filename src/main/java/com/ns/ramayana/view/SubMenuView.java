@@ -27,9 +27,7 @@ public class SubMenuView {
         while (game.isGameActive()){
             baseView.print(updateGameMenu);
             baseView.printText("Please Select ID Of Option!");
-            int subMenuselectedOption = baseView.readInt();
-            subMenuController.execute(subMenuselectedOption);
-
+            subMenuController.execute(baseView.readInt());
         }
     }
 }
