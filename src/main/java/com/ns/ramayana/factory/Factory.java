@@ -14,7 +14,7 @@ public class Factory {
     private CreateGameStep createGameStep;
     private BaseView baseView;
     private PersistentService persistentService;
-    private  PlayGameStep playGameStep;
+    private PlayGameStep playGameStep;
     private WelcomeStep welcomeStep;
     private HowToPlayStep howToPlayStep;
     private SummaryStep summaryStep;
@@ -44,7 +44,7 @@ public class Factory {
     }
 
     private HowToPlayStep createHowToPlayStep() {
-        this.howToPlayStep=new HowToPlayStep();
+        this.howToPlayStep=new HowToPlayStep(getBaseView());
         return this.howToPlayStep;
 
     }

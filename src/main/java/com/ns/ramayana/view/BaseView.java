@@ -44,7 +44,7 @@ public class BaseView {
     public Integer readInt() {
         try {
             return Integer.parseInt(in.readLine());
-        } catch (IOException e) {
+        } catch (NumberFormatException | IOException e) {
             throw new GameException("Invalid Input , Not a Number ", e);
         }
     }
@@ -52,7 +52,7 @@ public class BaseView {
     public Long readLong() {
         try {
             return Long.parseLong(in.readLine());
-        } catch (IOException e) {
+        } catch (NumberFormatException|IOException e) {
             throw new GameException("Invalid Input , Not a Number ", e);
         }
 
