@@ -14,9 +14,9 @@ public class UpdateGameMenu {
 
         addMenuOption(  new UpdateGameMenuItem(new MenuItem(1,"Start Battle"), startBattleCommand));
         addMenuOption( new UpdateGameMenuItem(new MenuItem(2,"Select Battle"), selectBattleCommand));
-        addMenuOption( new UpdateGameMenuItem(new MenuItem(3,"ProfileCommand"), profileCommand));
-        addMenuOption( new UpdateGameMenuItem(new MenuItem(4,"SaveCommand"), saveCommand));
-        addMenuOption( new UpdateGameMenuItem(new MenuItem(5,"HelpCommand"),help));
+        addMenuOption( new UpdateGameMenuItem(new MenuItem(3,"Profile "), profileCommand));
+        addMenuOption( new UpdateGameMenuItem(new MenuItem(4,"Save "), saveCommand));
+        addMenuOption( new UpdateGameMenuItem(new MenuItem(5,"Help "),help));
         addMenuOption( new UpdateGameMenuItem(new MenuItem(6,"Exit"),exit));
 
 
