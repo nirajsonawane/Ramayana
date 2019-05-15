@@ -25,7 +25,7 @@ The Implementation is mix baggage of MVC and Functional Interfaces as commands.
   As i started making progress, Realized the stuff which i was doing after accepting user input can be converted in to kind of commands. So introduce commands as SAM.  
 * After Implementing exploration part of game, Display portion of a code started scattering at multiple places. At this point i introduce MVC.
 This portion of code is inspire by this post  https://dzone.com/articles/poor-mans-console-mvc
-* During the end of my Implementation, Main class was calling functions one by one. To rectify this issue and have better understanding of flow of 
+* At the end of my Implementation, Main class was calling functions one by one. To rectify this issue and have better understanding of flow of 
  program added Steps in my Implementation.
 
 ## Trade off                    
